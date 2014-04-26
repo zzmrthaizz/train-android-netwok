@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 
 	ListView etResponse;
 	TextView tvIsConnected;
-	String url = "http://randomuser.me";
+	String url = "http://api.randomuser.me/?seed=crazyMouse";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +79,10 @@ public class MainActivity extends Activity {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
+
 		etResponse.setAdapter(new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_activated_1, list));
-		
+
 	}
 
 	public boolean isConnected() {
