@@ -18,11 +18,17 @@
     <ListView
         android:id="@+id/etResponse"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:ems="10"
         android:layout_marginTop="10dp" >
  
         <requestFocus />
     </ListView>
+    <Button 
+        android:id="@+id/add"
+        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"/>
  
 </LinearLayout>
