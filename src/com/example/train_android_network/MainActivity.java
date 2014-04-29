@@ -88,9 +88,10 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				data = readData();
-				getData();
-				
+				for (int i = 0; i < 10; i++) {
+					data = readData();
+					getData();
+				}
 			}
 		});
 		
@@ -112,12 +113,14 @@ public class MainActivity extends Activity {
 				String first = name.getString("first");
 				String mail = user.getString("email");
 				String phone = user.getString("phone");
+				String picture=user.getString("picture");
 				User userobj = new User();
 				userobj.setGender(gender);
 				userobj.setMail(mail);
 				userobj.setName(title+ "."
 						+ first);
 				userobj.setPhone(phone);
+				userobj.setPicture(picture);
 				list.add(userobj);
 				myAdapter.notifyDataSetChanged();
 			}

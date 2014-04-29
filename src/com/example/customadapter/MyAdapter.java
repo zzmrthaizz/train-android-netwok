@@ -11,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.train_android_network.User;
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
 public class MyAdapter extends ArrayAdapter<User>{
 
@@ -35,6 +37,7 @@ public class MyAdapter extends ArrayAdapter<User>{
 		TextView gender = (TextView) convertView.findViewById(R.id.tvgender);
 		TextView phone = (TextView) convertView.findViewById(R.id.tvphone);
 		TextView mail = (TextView) convertView.findViewById(R.id.tvmail);
+		ImageView avatar=(ImageView) convertView.findViewById(R.id.img_avatar);
 
 		User user = list.get(positon);
 		name.setText(user.getName());
@@ -42,8 +45,9 @@ public class MyAdapter extends ArrayAdapter<User>{
 		phone.setText(user.getPhone());
 		mail.setText(user.getMail());
 		
+		
+		UrlImageViewHelper.setUrlDrawable(avatar, user.getPicture());
+		
 		return convertView;
 	}
-	
-	
 }
